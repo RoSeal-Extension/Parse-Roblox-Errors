@@ -34,14 +34,14 @@ await build({
     name: "parse-roblox-errors",
     description: "A Deno/NodeJS module to parse Roblox errors",
     version: "1.1.10",
-    homepage: "https://github.com/Julli4n/parse-roblox-errors",
-    author: "Julli4n",
+    homepage: "https://github.com/RoSeal-Extension/Parse-Roblox-Errors",
+    author: "juliaoverflow",
     bugs: {
-      url: "https://github.com/Julli4n/parse-roblox-errors/issues",
+      url: "https://github.com/RoSeal-Extension/Parse-Roblox-Errors/issues",
     },
     repository: {
       type: "git",
-      url: "git@github.com:Julli4n/parse-roblox-errors.git",
+      url: "git@github.com:RoSeal-Extension/Parse-Roblox-Errors.git",
     },
     keywords: [
       "roblox",
