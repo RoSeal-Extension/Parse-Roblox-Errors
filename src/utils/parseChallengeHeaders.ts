@@ -15,7 +15,8 @@ type ChallengeType =
   | "deviceintegrity"
   | "proofofspace"
   | "emailverification"
-  | "phoneverification";
+  | "phoneverification" 
+  | "blocksession"
 
 export type ParsedChallenge = {
   challengeType: ChallengeType;
