@@ -1,20 +1,20 @@
 {
   "name": "parse-roblox-errors",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "A Deno/NodeJS module to parse Roblox errors",
   "keywords": [
     "roblox",
     "api"
   ],
-  "author": "Julli4n",
-  "homepage": "https://github.com/Julli4n/parse-roblox-errors",
+  "author": "juliaoverflow",
+  "homepage": "https://github.com/RoSeal-Extension/Parse-Roblox-Errors",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Julli4n/parse-roblox-errors.git"
+    "url": "git@github.com:RoSeal-Extension/Parse-Roblox-Errors.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Julli4n/parse-roblox-errors/issues"
+    "url": "https://github.com/RoSeal-Extension/Parse-Roblox-Errors/issues"
   },
   "main": "./script/mod.js",
   "module": "./esm/mod.js",

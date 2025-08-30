@@ -46,6 +46,11 @@ type BEDEV2ErrorResponse = string | string[] | {
     status?: string;
     message?: string;
 } | {
+    error: {
+        errorMessage: string;
+        errorType: string;
+    };
+} | {
     errorType: string;
     errorMessage?: string;
 } | {
