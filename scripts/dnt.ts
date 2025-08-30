@@ -1,5 +1,5 @@
-import { build } from "jsr:@deno/dnt@0.41.1";
-import { copy } from "jsr:@std/fs@0.221.0";
+import { build } from "jsr:@deno/dnt@0.42.3";
+import { copy } from "jsr:@std/fs@1.0.19";
 
 await build({
   entryPoints: [
@@ -20,12 +20,12 @@ await build({
       {
         package: {
           name: "whatwg-mimetype",
-          version: "^3.0.0",
+          version: "^4.0.0",
         },
         globalNames: [],
         typesPackage: {
           name: "@types/whatwg-mimetype",
-          version: "^2.1.1",
+          version: "^3.0.2",
         },
       },
     ],

@@ -31,7 +31,7 @@ jobs:
         run: deno lint
         
       - name: Build npm folder
-        run: deno run -A --unstable ./scripts/dnt.ts
+        run: deno run -A ./scripts/dnt.ts
         
       - name: Remove node_modules
         run: rm -rf npm/node_modules

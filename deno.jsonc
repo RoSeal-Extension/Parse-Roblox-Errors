@@ -2,10 +2,7 @@
   "name": "@julli4n/parse-roblox-errors",
   "version": "1.1.11",
   "exports": "./mod.ts",
-  "fmt": {
-    "indentWidth": 2,
-    "lineWidth": 80,
-    "semiColons": true,
-    "singleQuote": false
+  "imports": {
+    "whatwg-mimetype": "npm:whatwg-mimetype@4.0.0"
   }
 }
