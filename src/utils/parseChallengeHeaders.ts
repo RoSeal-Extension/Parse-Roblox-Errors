@@ -17,7 +17,7 @@ type ChallengeType =
   | "emailverification"
   | "phoneverification" 
   | "blocksession"
-  | "biometric"
+  | "biometric";
 
 export type ParsedChallenge = {
   challengeType: ChallengeType;
