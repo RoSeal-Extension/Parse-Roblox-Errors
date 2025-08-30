@@ -57,6 +57,13 @@ type BEDEV2ErrorResponse =
     status?: string;
     message?: string;
   }
+  //  https://apis.roblox.com/asset-reviews-api/v1/assets/
+  | {
+    error: {
+      errorMessage: string;
+      errorType: string;
+    }
+  }
   | {
     errorType: string;
     errorMessage?: string;
@@ -152,6 +159,11 @@ export function parseBEDEV2ErrorFromJSON(
           return [{
             code: json.reason_code,
             message: json.error,
+          }]
+        } else if (typeof json.error === "object" && "errorType" in json.error) {
+          return [{
+            code: json.error.errorType,
+            message: json.error.errorMessage,
           }]
         }
       }
