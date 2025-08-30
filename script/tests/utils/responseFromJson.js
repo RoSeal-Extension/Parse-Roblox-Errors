@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.responseFromJSON = void 0;
+exports.responseFromJSON = responseFromJSON;
 function responseFromJSON(data, headers) {
     const json = JSON.stringify(data);
     return new Response(json, {
@@ -11,4 +11,3 @@ function responseFromJSON(data, headers) {
         },
     });
 }
-exports.responseFromJSON = responseFromJSON;

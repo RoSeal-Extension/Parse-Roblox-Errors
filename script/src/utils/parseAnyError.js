@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseAnyError = void 0;
+exports.parseAnyError = parseAnyError;
 const deps_js_1 = require("../deps.js");
 const isResponseTypeJson_js_1 = require("./isResponseTypeJson.js");
 async function parseAnyError(body, handleJSON, headers, contentType) {
@@ -40,4 +40,3 @@ async function parseAnyError(body, handleJSON, headers, contentType) {
     }
     return errors;
 }
-exports.parseAnyError = parseAnyError;
