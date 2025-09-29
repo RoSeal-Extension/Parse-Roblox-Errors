@@ -1,5 +1,5 @@
-import { build } from "jsr:@deno/dnt@0.42.3";
-import { copy } from "jsr:@std/fs@1.0.19";
+import { build } from "@deno/dnt@0.42.3";
+import { copy } from "@std/fs@1.0.19";
 
 await build({
   entryPoints: [
