@@ -1,5 +1,5 @@
-import { build } from "@deno/dnt@0.42.3";
-import { copy } from "@std/fs@1.0.19";
+import { build } from "@deno/dnt";
+import { copy } from "@std/fs";
 
 await build({
   entryPoints: [
@@ -30,7 +30,6 @@ await build({
       },
     ],
   },
-  configFile: import.meta.resolve("../deno.jsonc"),
   package: {
     name: "parse-roblox-errors",
     description: "A Deno/NodeJS module to parse Roblox errors",
