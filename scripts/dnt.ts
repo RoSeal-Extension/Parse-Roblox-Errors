@@ -30,6 +30,7 @@ await build({
       },
     ],
   },
+  configFile: import.meta.resolve("../deno.jsonc"),
   package: {
     name: "parse-roblox-errors",
     description: "A Deno/NodeJS module to parse Roblox errors",
