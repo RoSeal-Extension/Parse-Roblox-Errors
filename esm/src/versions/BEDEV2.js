@@ -137,6 +137,14 @@ export function parseBEDEV2ErrorFromJSON(json) {
                     ];
                 }
             }
+            if ("errorDescription" in json) {
+                if ("errorCode" in json) {
+                    return [{
+                            code: json.errorCode,
+                            message: json.errorDescription
+                        }];
+                }
+            }
             if ("Error" in json) {
                 if ("Code" in json.Error && "Message" in json.Error) {
                     return [

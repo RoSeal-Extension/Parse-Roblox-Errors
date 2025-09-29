@@ -29,6 +29,9 @@ type BEDEV2ErrorResponse = string | string[] | {
     clientHint?: string | null;
 } | {
     errorCode?: number;
+    errorDescription?: string;
+} | {
+    errorCode?: number;
     message?: string;
 } | {
     Error?: {
