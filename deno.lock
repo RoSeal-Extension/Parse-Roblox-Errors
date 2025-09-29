@@ -295,6 +295,8 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@deno/dnt@0.42.3",
+      "jsr:@std/fs@1.0.19",
       "npm:whatwg-mimetype@4.0.0"
     ]
   }
