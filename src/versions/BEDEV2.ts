@@ -40,6 +40,10 @@ type BEDEV2ErrorResponse =
   }
   | {
     errorCode?: number;
+    errorDescription?: string;
+  }
+  | {
+    errorCode?: number;
     message?: string;
   }
   | {
@@ -125,6 +129,7 @@ export function parseBEDEV2ErrorFromJSON(
           );
         }
       }
+      
       if ("error" in json) {
         if ("code" in json) {
           return [
@@ -215,6 +220,15 @@ export function parseBEDEV2ErrorFromJSON(
               hint: json.hint ?? json.clientHint,
             },
           ];
+        }
+      }
+
+      if ("errorDescription" in json) {
+        if ("errorCode" in json) {
+          return [{
+            code: json.errorCode!,
+            message: json.errorDescription!
+          }]
         }
       }
 
