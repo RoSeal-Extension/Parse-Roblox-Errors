@@ -1,4 +1,4 @@
-type ChildError = {
+export type ChildError = {
     type: string;
     code: string;
 } | {
@@ -15,4 +15,3 @@ export type AnyError = {
     fieldData?: string;
     hint?: string | null;
 };
-export {};
