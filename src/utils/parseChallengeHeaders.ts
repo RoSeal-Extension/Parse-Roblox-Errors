@@ -3,7 +3,7 @@ export const GENERIC_CHALLENGE_TYPE_HEADER = "rblx-challenge-type" as const;
 export const GENERIC_CHALLENGE_METADATA_HEADER =
   "rblx-challenge-metadata" as const;
 
-type ChallengeType =
+export type ChallengeType =
   | "captcha"
   | "forceauthenticator"
   | "forcetwostepverification"
@@ -15,7 +15,7 @@ type ChallengeType =
   | "deviceintegrity"
   | "proofofspace"
   | "emailverification"
-  | "phoneverification" 
+  | "phoneverification"
   | "blocksession"
   | "biometric";
 
@@ -28,23 +28,21 @@ export type ParsedChallenge = {
 export function parseChallengeHeaders(
   headers: Headers,
 ): ParsedChallenge | null {
-  if (
-    ![
-      GENERIC_CHALLENGE_TYPE_HEADER,
-      GENERIC_CHALLENGE_ID_HEADER,
-      GENERIC_CHALLENGE_METADATA_HEADER,
-    ].every((item) => headers.has(item))
-  ) {
+  const challengeType = headers.get(GENERIC_CHALLENGE_TYPE_HEADER) as
+    | ChallengeType
+    | null;
+  const challengeId = headers.get(GENERIC_CHALLENGE_ID_HEADER);
+  const challengeBase64Metadata = headers.get(
+    GENERIC_CHALLENGE_METADATA_HEADER,
+  );
+
+  if (!challengeType || !challengeId || !challengeBase64Metadata) {
     return null;
   }
 
   return {
-    challengeType: headers.get(
-      GENERIC_CHALLENGE_TYPE_HEADER,
-    )! as ChallengeType,
-    challengeId: headers.get(GENERIC_CHALLENGE_ID_HEADER)!,
-    challengeBase64Metadata: headers.get(
-      GENERIC_CHALLENGE_METADATA_HEADER,
-    )!,
+    challengeType,
+    challengeId,
+    challengeBase64Metadata,
   };
 }

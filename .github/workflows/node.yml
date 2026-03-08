@@ -1,5 +1,9 @@
 name: Release/transpile Node
 
+permissions:
+  id-token: write
+  contents: read
+
 on:
   push:
     branches: [main]
@@ -24,15 +28,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '24.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "24.x"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Deno Lint
         run: deno lint
-        
+
       - name: Build npm folder
         run: deno run -A ./scripts/dnt.ts
-        
+
       - name: Remove node_modules
         run: rm -rf npm/node_modules
 
@@ -45,10 +49,8 @@ jobs:
           FOLDER: npm
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
-  
+
       # Only used if it's triggered from a release
       - name: Publish on NPM
         if: github.event_name == 'release' && github.repository == 'RoSeal-Extension/Parse-Roblox-Errors'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: cd npm && npm publish --access public
+        run: cd npm && npm publish --access public --provenance

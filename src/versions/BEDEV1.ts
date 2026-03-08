@@ -36,13 +36,13 @@ export function parseBEDEV1ErrorFromJSON(
 
       // Parse the fucking stupid json errors in error.message shit
       if (message?.startsWith("{")) {
-          try {
-            const data = JSON.parse(message.trim());
+        try {
+          const data = JSON.parse(message.trim());
 
-            return parseBEDEV2ErrorFromJSON(data);
-          } catch {
-            return [];
-          }
+          return parseBEDEV2ErrorFromJSON(data);
+        } catch {
+          return [];
+        }
       }
 
       return error;

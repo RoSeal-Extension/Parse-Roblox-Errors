@@ -66,7 +66,7 @@ type BEDEV2ErrorResponse =
     error: {
       errorMessage: string;
       errorType: string;
-    }
+    };
   }
   | {
     errorType: string;
@@ -83,10 +83,11 @@ type BEDEV2ErrorResponse =
       FieldName: string;
       FieldData: string;
     }[];
-  } | {
+  }
+  | {
     error: string;
     reason_code: string;
-  }
+  };
 
 export function parseBEDEV2ErrorFromJSON(
   json: BEDEV2ErrorResponse,
@@ -129,7 +130,7 @@ export function parseBEDEV2ErrorFromJSON(
           );
         }
       }
-      
+
       if ("error" in json) {
         if ("code" in json) {
           return [
@@ -164,12 +165,14 @@ export function parseBEDEV2ErrorFromJSON(
           return [{
             code: json.reason_code,
             message: json.error,
-          }]
-        } else if (typeof json.error === "object" && "errorType" in json.error) {
+          }];
+        } else if (
+          typeof json.error === "object" && "errorType" in json.error
+        ) {
           return [{
             code: json.error.errorType,
             message: json.error.errorMessage,
-          }]
+          }];
         }
       }
 
@@ -227,8 +230,8 @@ export function parseBEDEV2ErrorFromJSON(
         if ("errorCode" in json) {
           return [{
             code: json.errorCode!,
-            message: json.errorDescription!
-          }]
+            message: json.errorDescription!,
+          }];
         }
       }
 
@@ -252,7 +255,7 @@ export function parseBEDEV2ErrorFromJSON(
           },
         ];
       } else if ("ValidationErrors" in json) {
-        return json.ValidationErrors.map(error => ({
+        return json.ValidationErrors.map((error) => ({
           code: error.Code,
           message: error.Message,
           field: error.FieldName,
