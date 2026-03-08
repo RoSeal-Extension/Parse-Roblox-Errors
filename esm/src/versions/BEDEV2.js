@@ -141,7 +141,7 @@ export function parseBEDEV2ErrorFromJSON(json) {
                 if ("errorCode" in json) {
                     return [{
                             code: json.errorCode,
-                            message: json.errorDescription
+                            message: json.errorDescription,
                         }];
                 }
             }
@@ -165,7 +165,7 @@ export function parseBEDEV2ErrorFromJSON(json) {
                 ];
             }
             else if ("ValidationErrors" in json) {
-                return json.ValidationErrors.map(error => ({
+                return json.ValidationErrors.map((error) => ({
                     code: error.Code,
                     message: error.Message,
                     field: error.FieldName,

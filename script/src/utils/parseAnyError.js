@@ -13,8 +13,9 @@ async function parseAnyError(body, handleJSON, headers, contentType) {
             : { message: robloxSystemReason });
     }
     const text = await body();
-    const contentLength = headers && headers.has("content-length")
-        ? parseInt(headers.get("content-length"), 10)
+    const contentLengthRaw = headers?.get("content-length");
+    const contentLength = contentLengthRaw
+        ? Number.parseInt(contentLengthRaw, 10)
         : text.length;
     if (contentLength === 0)
         return errors;

@@ -1,1 +1,1 @@
-export * from "../deps/jsr.io/@std/assert/1.0.14/mod.js";
+export * from "../deps/jsr.io/@std/assert/1.0.19/mod.js";

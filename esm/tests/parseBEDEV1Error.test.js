@@ -23,28 +23,28 @@ dntShim.Deno.test({
             errors: [
                 {
                     code: 0,
-                    message: "{\"ValidationErrors\":[{\"Code\":2,\"Message\":\"Invalid value, must be in range [0.9 - 1.05]\",\"FieldName\":\"Height\",\"FieldData\":\"\"},{\"Code\":2,\"Message\":\"Invalid value, must be in range [0.7 - 1]\",\"FieldName\":\"Width\",\"FieldData\":\"\"},{\"Code\":2,\"Message\":\"Invalid value, must be in range [0.95 - 1]\",\"FieldName\":\"Head\",\"FieldData\":\"\"}]}"
-                }
-            ]
+                    message: '{"ValidationErrors":[{"Code":2,"Message":"Invalid value, must be in range [0.9 - 1.05]","FieldName":"Height","FieldData":""},{"Code":2,"Message":"Invalid value, must be in range [0.7 - 1]","FieldName":"Width","FieldData":""},{"Code":2,"Message":"Invalid value, must be in range [0.95 - 1]","FieldName":"Head","FieldData":""}]}',
+                },
+            ],
         })), [
             {
                 code: 2,
                 message: "Invalid value, must be in range [0.9 - 1.05]",
                 field: "Height",
-                fieldData: ""
+                fieldData: "",
             },
             {
                 code: 2,
                 message: "Invalid value, must be in range [0.7 - 1]",
                 field: "Width",
-                fieldData: ""
+                fieldData: "",
             },
             {
                 code: 2,
                 message: "Invalid value, must be in range [0.95 - 1]",
                 field: "Head",
-                fieldData: ""
-            }
+                fieldData: "",
+            },
         ], "Weird error with real errors under .message returned");
         assertEquals(await parseBEDEV1Error(responseFromJSON({
             errors: [{
