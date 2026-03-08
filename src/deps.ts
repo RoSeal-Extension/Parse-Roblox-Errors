@@ -1,1 +1,1 @@
-export { default as MIMEType } from "whatwg-mimetype";
+export { MIMEType } from "whatwg-mimetype";
