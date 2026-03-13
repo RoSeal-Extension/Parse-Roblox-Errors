@@ -37,6 +37,10 @@ type BEDEV2ErrorResponse =
     field?: string;
     hint?: string | null;
     clientHint?: string | null;
+
+    // /transfer/v1/robux-transfer/initiate-transfer
+    ampRecourseActions?: unknown | null;
+    ampFeatureCheck?: unknown | null;
   }
   | {
     errorCode?: number;
@@ -221,6 +225,9 @@ export function parseBEDEV2ErrorFromJSON(
               message: json.errorMessage!,
               field: json.field,
               hint: json.hint ?? json.clientHint,
+
+              ampRecourseActions: json.ampRecourseActions,
+              ampFeatureCheck: json.ampFeatureCheck,
             },
           ];
         }
