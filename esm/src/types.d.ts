@@ -14,4 +14,6 @@ export type AnyError = {
     field?: string;
     fieldData?: string;
     hint?: string | null;
+    ampRecourseActions?: unknown | null;
+    ampFeatureCheck?: unknown | null;
 };

@@ -139,6 +139,8 @@ function parseBEDEV2ErrorFromJSON(json) {
                             message: json.errorMessage,
                             field: json.field,
                             hint: json.hint ?? json.clientHint,
+                            ampRecourseActions: json.ampRecourseActions,
+                            ampFeatureCheck: json.ampFeatureCheck,
                         },
                     ];
                 }

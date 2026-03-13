@@ -27,6 +27,8 @@ type BEDEV2ErrorResponse = string | string[] | {
     field?: string;
     hint?: string | null;
     clientHint?: string | null;
+    ampRecourseActions?: unknown | null;
+    ampFeatureCheck?: unknown | null;
 } | {
     errorCode?: number;
     errorDescription?: string;
