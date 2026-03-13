@@ -1,6 +1,7 @@
 ## parse-roblox-errors
 
-A Deno module for parsing BEDEV1/BEDEV2 errors from Roblox API responses, since Roblox errors are not standardized. This will also parse
+A Deno module for parsing BEDEV1/BEDEV2 errors from Roblox API responses, since
+Roblox errors are not standardized. This will also parse
 `x-roblox-system-reason` on the few endpoints that give it.
 
 ### Usage

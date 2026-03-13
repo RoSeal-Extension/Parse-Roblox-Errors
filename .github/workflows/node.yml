@@ -34,7 +34,6 @@ jobs:
       - name: Deno Lint
         run: deno lint
 
-
       - name: Publish on JSR
         if: github.event_name == 'release' && github.repository == 'RoSeal-Extension/Parse-Roblox-Errors'
         run: deno publish --allow-dirty
