@@ -3,22 +3,24 @@ export const GENERIC_CHALLENGE_TYPE_HEADER = "rblx-challenge-type" as const;
 export const GENERIC_CHALLENGE_METADATA_HEADER =
   "rblx-challenge-metadata" as const;
 
-export type ChallengeType =
-  | "captcha"
-  | "forceauthenticator"
-  | "forcetwostepverification"
-  | "securityquestions"
-  | "reauthentication"
-  | "proofofwork"
-  | "rostile"
-  | "privateaccesstoken"
-  | "deviceintegrity"
-  | "proofofspace"
-  | "emailverification"
-  | "phoneverification"
-  | "blocksession"
-  | "biometric"
-  | "chef";
+export enum ChallengeType {
+  Captcha = "captcha",
+  ForceAuthenticator = "forceauthenticator",
+  ForceTwoStepVerification = "forcetwostepverification",
+  SecurityQuestions = "securityquestions",
+  Reauthentication = "reauthentication",
+  ProofOfWork = "proofofwork",
+  Rostile = "rostile",
+  PrivateAccessToken = "privateaccesstoken",
+  DeviceIntegrity = "deviceintegrity",
+  ProofOfSpace = "proofofspace",
+  EmailVerification = "emailverification",
+  PhoneVerification = "phoneverification",
+  BlockSession = "blocksession",
+  Biometric = "biometric",
+  Chef = "chef",
+  None = "",
+}
 
 export type ParsedChallenge = {
   challengeType: ChallengeType;

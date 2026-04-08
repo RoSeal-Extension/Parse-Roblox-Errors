@@ -33,7 +33,7 @@ await build({
   package: {
     name: "parse-roblox-errors",
     description: "A Deno/NodeJS module to parse Roblox errors",
-    version: "1.1.13",
+    version: "1.2.0",
     homepage: "https://github.com/RoSeal-Extension/Parse-Roblox-Errors",
     author: "juliaoverflow",
     bugs: {
