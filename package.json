@@ -1,6 +1,6 @@
 {
   "name": "parse-roblox-errors",
-  "version": "1.1.13",
+  "version": "1.2.0",
   "description": "A Deno/NodeJS module to parse Roblox errors",
   "keywords": [
     "roblox",
