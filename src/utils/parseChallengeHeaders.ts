@@ -20,6 +20,7 @@ export enum ChallengeType {
   Biometric = "biometric",
   Chef = "chef",
   Denied = "denied",
+  TwoStepVerification = "twostepverification",
   None = "",
 }
 
