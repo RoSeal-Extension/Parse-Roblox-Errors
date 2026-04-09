@@ -19,6 +19,7 @@ export var ChallengeType;
     ChallengeType["Biometric"] = "biometric";
     ChallengeType["Chef"] = "chef";
     ChallengeType["Denied"] = "denied";
+    ChallengeType["TwoStepVerification"] = "twostepverification";
     ChallengeType["None"] = "";
 })(ChallengeType || (ChallengeType = {}));
 export function parseChallengeHeaders(headers) {

@@ -18,6 +18,7 @@ export declare enum ChallengeType {
     Biometric = "biometric",
     Chef = "chef",
     Denied = "denied",
+    TwoStepVerification = "twostepverification",
     None = ""
 }
 export type ParsedChallenge = {
