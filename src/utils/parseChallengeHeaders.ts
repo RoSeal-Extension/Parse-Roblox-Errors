@@ -19,6 +19,7 @@ export enum ChallengeType {
   BlockSession = "blocksession",
   Biometric = "biometric",
   Chef = "chef",
+  Denied = "denied",
   None = "",
 }
 
