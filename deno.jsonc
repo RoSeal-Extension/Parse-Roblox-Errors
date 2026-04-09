@@ -1,7 +1,7 @@
 {
   "name": "@julli4n/parse-roblox-errors",
   "license": "MIT",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "exports": "./mod.ts",
   "imports": {
     "@deno/dnt": "jsr:@deno/dnt@0.42.3",
