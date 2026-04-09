@@ -22,6 +22,7 @@ var ChallengeType;
     ChallengeType["BlockSession"] = "blocksession";
     ChallengeType["Biometric"] = "biometric";
     ChallengeType["Chef"] = "chef";
+    ChallengeType["Denied"] = "denied";
     ChallengeType["None"] = "";
 })(ChallengeType || (exports.ChallengeType = ChallengeType = {}));
 function parseChallengeHeaders(headers) {

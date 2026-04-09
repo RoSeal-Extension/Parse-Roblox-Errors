@@ -17,6 +17,7 @@ export declare enum ChallengeType {
     BlockSession = "blocksession",
     Biometric = "biometric",
     Chef = "chef",
+    Denied = "denied",
     None = ""
 }
 export type ParsedChallenge = {
