@@ -22,6 +22,7 @@ export enum ChallengeType {
   Chef = "chef",
   Denied = "denied",
   TwoStepVerification = "twostepverification",
+  Turnstile = "turnstile",
   None = "",
 }
 
