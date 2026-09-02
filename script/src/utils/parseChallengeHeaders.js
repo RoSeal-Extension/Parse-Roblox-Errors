@@ -25,6 +25,7 @@ var ChallengeType;
     ChallengeType["Chef"] = "chef";
     ChallengeType["Denied"] = "denied";
     ChallengeType["TwoStepVerification"] = "twostepverification";
+    ChallengeType["Turnstile"] = "turnstile";
     ChallengeType["None"] = "";
 })(ChallengeType || (exports.ChallengeType = ChallengeType = {}));
 function parseChallengeHeaders(headers) {
