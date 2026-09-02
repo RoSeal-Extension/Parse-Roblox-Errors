@@ -33,7 +33,7 @@ await build({
   package: {
     name: "parse-roblox-errors",
     description: "A Deno/NodeJS module to parse Roblox errors",
-    version: "1.2.2",
+    version: "1.2.3",
     homepage: "https://github.com/RoSeal-Extension/Parse-Roblox-Errors",
     author: "juliaoverflow",
     bugs: {
@@ -52,5 +52,5 @@ await build({
   typeCheck: false,
 });
 
-await copy("./README.md", "./npm/README.md");
-await copy("./LICENSE", "./npm/LICENSE");
+await copy("./README.md", "./npm/README.md").catch(() => {});
+await copy("./LICENSE", "./npm/LICENSE").catch(() => {});

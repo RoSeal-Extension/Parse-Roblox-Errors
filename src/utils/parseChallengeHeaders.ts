@@ -5,6 +5,7 @@ export const GENERIC_CHALLENGE_METADATA_HEADER =
 
 export enum ChallengeType {
   Captcha = "captcha",
+  CaptchaV2 = "captchav2",
   ForceAuthenticator = "forceauthenticator",
   ForceTwoStepVerification = "forcetwostepverification",
   SecurityQuestions = "securityquestions",
