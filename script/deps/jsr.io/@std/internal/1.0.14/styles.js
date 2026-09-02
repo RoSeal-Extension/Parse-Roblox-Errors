@@ -1,5 +1,5 @@
 "use strict";
-// Copyright 2018-2025 the Deno authors. MIT license.
+// Copyright 2018-2026 the Deno authors. MIT license.
 // This module is browser compatible.
 // A module to print ANSI terminal colors. Inspired by chalk, kleur, and colors
 // on npm.
@@ -229,7 +229,7 @@ function bgGreen(str) {
     return run(str, code([42], 49));
 }
 // https://github.com/chalk/ansi-regex/blob/02fa893d619d3da85411acc8fd4e2eea0e95a9d9/index.js
-const ANSI_PATTERN = new RegExp([
+const ANSI_REGEXP = new RegExp([
     "[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)",
     "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TXZcf-nq-uy=><~]))",
 ].join("|"), "g");
@@ -248,5 +248,5 @@ const ANSI_PATTERN = new RegExp([
  * ```
  */
 function stripAnsiCode(string) {
-    return string.replace(ANSI_PATTERN, "");
+    return string.replace(ANSI_REGEXP, "");
 }

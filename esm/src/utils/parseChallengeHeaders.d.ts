@@ -3,6 +3,7 @@ export declare const GENERIC_CHALLENGE_TYPE_HEADER: "rblx-challenge-type";
 export declare const GENERIC_CHALLENGE_METADATA_HEADER: "rblx-challenge-metadata";
 export declare enum ChallengeType {
     Captcha = "captcha",
+    CaptchaV2 = "captchav2",
     ForceAuthenticator = "forceauthenticator",
     ForceTwoStepVerification = "forcetwostepverification",
     SecurityQuestions = "securityquestions",

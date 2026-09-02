@@ -1,7 +1,7 @@
 // Copyright 2018-2026 the Deno authors. MIT license.
 // This module is browser compatible.
 import { equal } from "./equal.js";
-import { format } from "../../internal/1.0.12/format.js";
+import { format } from "../../internal/1.0.14/format.js";
 import { AssertionError } from "./assertion_error.js";
 function isPrimitive(value) {
     return value === null ||

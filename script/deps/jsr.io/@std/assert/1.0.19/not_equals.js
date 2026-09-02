@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertNotEquals = assertNotEquals;
 const equal_js_1 = require("./equal.js");
 const assertion_error_js_1 = require("./assertion_error.js");
-const format_js_1 = require("../../internal/1.0.12/format.js");
+const format_js_1 = require("../../internal/1.0.14/format.js");
 /**
  * Make an assertion that `actual` and `expected` are not equal, deeply.
  * If not then throw.

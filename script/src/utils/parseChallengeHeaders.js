@@ -8,6 +8,7 @@ exports.GENERIC_CHALLENGE_METADATA_HEADER = "rblx-challenge-metadata";
 var ChallengeType;
 (function (ChallengeType) {
     ChallengeType["Captcha"] = "captcha";
+    ChallengeType["CaptchaV2"] = "captchav2";
     ChallengeType["ForceAuthenticator"] = "forceauthenticator";
     ChallengeType["ForceTwoStepVerification"] = "forcetwostepverification";
     ChallengeType["SecurityQuestions"] = "securityquestions";

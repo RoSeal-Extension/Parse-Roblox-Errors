@@ -1,7 +1,7 @@
 // Copyright 2018-2026 the Deno authors. MIT license.
 // This module is browser compatible.
 import { AssertionError } from "./assertion_error.js";
-import { format } from "../../internal/1.0.12/format.js";
+import { format } from "../../internal/1.0.14/format.js";
 /**
  * Make an assertion that `actual` and `expected` are not strictly equal, using
  * {@linkcode Object.is} for equality comparison. If the values are strictly

@@ -1,5 +1,12 @@
-// Copyright 2018-2025 the Deno authors. MIT license.
+"use strict";
+// Copyright 2018-2026 the Deno authors. MIT license.
 // This module is browser compatible.
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createCommon = createCommon;
+exports.assertFp = assertFp;
+exports.backTrace = backTrace;
+exports.createFp = createFp;
+exports.diff = diff;
 const REMOVED = 1;
 const COMMON = 2;
 const ADDED = 3;
@@ -24,7 +31,7 @@ const ADDED = 3;
  * assertEquals(createCommon(a, b), [1, 2]);
  * ```
  */
-export function createCommon(A, B) {
+function createCommon(A, B) {
     const common = [];
     if (A.length === 0 || B.length === 0)
         return [];
@@ -59,7 +66,7 @@ export function createCommon(A, B) {
  * assertThrows(() => assertFp(undefined));
  * ```
  */
-export function assertFp(value) {
+function assertFp(value) {
     if (value == null ||
         typeof value !== "object" ||
         typeof value?.y !== "number" ||
@@ -92,7 +99,7 @@ export function assertFp(value) {
  * );
  * ```
  */
-export function backTrace(A, B, current, swapped, routes, diffTypesPtrOffset) {
+function backTrace(A, B, current, swapped, routes, diffTypesPtrOffset) {
     const M = A.length;
     const N = B.length;
     const result = [];
@@ -105,27 +112,28 @@ export function backTrace(A, B, current, swapped, routes, diffTypesPtrOffset) {
             break;
         const prev = j;
         if (type === REMOVED) {
-            result.unshift({
+            result.push({
                 type: swapped ? "removed" : "added",
                 value: B[b],
             });
             b -= 1;
         }
         else if (type === ADDED) {
-            result.unshift({
+            result.push({
                 type: swapped ? "added" : "removed",
                 value: A[a],
             });
             a -= 1;
         }
         else {
-            result.unshift({ type: "common", value: A[a] });
+            result.push({ type: "common", value: A[a] });
             a -= 1;
             b -= 1;
         }
         j = routes[prev];
         type = routes[prev + diffTypesPtrOffset];
     }
+    result.reverse();
     return result;
 }
 /**
@@ -160,7 +168,7 @@ export function backTrace(A, B, current, swapped, routes, diffTypesPtrOffset) {
  * );
  * ```
  */
-export function createFp(k, M, routes, diffTypesPtrOffset, ptr, slide, down) {
+function createFp(k, M, routes, diffTypesPtrOffset, ptr, slide, down) {
     if (slide && slide.y === -1 && down && down.y === -1) {
         return { y: 0, id: 0 };
     }
@@ -209,7 +217,7 @@ export function createFp(k, M, routes, diffTypesPtrOffset, ptr, slide, down) {
  * ]);
  * ```
  */
-export function diff(A, B) {
+function diff(A, B) {
     const prefixCommon = createCommon(A, B);
     A = A.slice(prefixCommon.length);
     B = B.slice(prefixCommon.length);

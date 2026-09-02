@@ -1,4 +1,5 @@
-const pc = require("picocolors");
+"use strict";
+const { styleText } = require("util");
 const process = require("process");
 const { pathToFileURL } = require("url");
 const { testDefinitions } = require("@deno/shim-deno/test-internals");
@@ -10,14 +11,14 @@ const filePaths = [
 async function main() {
     const testContext = {
         process,
-        pc,
+        styleText,
     };
     for (const [i, filePath] of filePaths.entries()) {
         if (i > 0) {
             console.log("");
         }
         const scriptPath = "./script/" + filePath;
-        console.log("Running tests in " + pc.underline(scriptPath) + "...\n");
+        console.log("Running tests in " + styleText("underline", scriptPath) + "...\n");
         process.chdir(__dirname + "/script");
         const scriptTestContext = {
             origin: pathToFileURL(filePath).toString(),
@@ -32,7 +33,7 @@ async function main() {
         }
         await runTestDefinitions(testDefinitions.splice(0, testDefinitions.length), scriptTestContext);
         const esmPath = "./esm/" + filePath;
-        console.log("\nRunning tests in " + pc.underline(esmPath) + "...\n");
+        console.log("\nRunning tests in " + styleText("underline", esmPath) + "...\n");
         process.chdir(__dirname + "/esm");
         const esmTestContext = {
             origin: pathToFileURL(filePath).toString(),
@@ -51,7 +52,7 @@ async function runTestDefinitions(testDefinitions, options) {
     for (const definition of testDefinitions) {
         options.process.stdout.write("test " + definition.name + " ...");
         if (definition.ignore) {
-            options.process.stdout.write(` ${options.pc.gray("ignored")}\n`);
+            options.process.stdout.write(` ${options.styleText("gray", "ignored")}\n`);
             continue;
         }
         const context = getTestContext(definition, undefined);
@@ -179,12 +180,12 @@ async function runTestDefinitions(testDefinitions, options) {
     function getStatusText(status) {
         switch (status) {
             case "ok":
-                return options.pc.green(status);
+                return options.styleText("green", status);
             case "fail":
             case "pending":
-                return options.pc.red(status);
+                return options.styleText("red", status);
             case "ignored":
-                return options.pc.gray(status);
+                return options.styleText("gray", status);
             default:
                 {
                     const _assertNever = status;

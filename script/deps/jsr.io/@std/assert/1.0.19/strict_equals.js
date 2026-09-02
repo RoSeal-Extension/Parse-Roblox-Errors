@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertStrictEquals = assertStrictEquals;
 // Copyright 2018-2026 the Deno authors. MIT license.
 // This module is browser compatible.
-const build_message_js_1 = require("../../internal/1.0.12/build_message.js");
-const diff_js_1 = require("../../internal/1.0.12/diff.js");
-const diff_str_js_1 = require("../../internal/1.0.12/diff_str.js");
-const format_js_1 = require("../../internal/1.0.12/format.js");
-const styles_js_1 = require("../../internal/1.0.12/styles.js");
+const build_message_js_1 = require("../../internal/1.0.14/build_message.js");
+const diff_js_1 = require("../../internal/1.0.14/diff.js");
+const diff_str_js_1 = require("../../internal/1.0.14/diff_str.js");
+const format_js_1 = require("../../internal/1.0.14/format.js");
+const styles_js_1 = require("../../internal/1.0.14/styles.js");
 const assertion_error_js_1 = require("./assertion_error.js");
 /**
  * Make an assertion that `actual` and `expected` are strictly equal, using

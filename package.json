@@ -1,6 +1,6 @@
 {
   "name": "parse-roblox-errors",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A Deno/NodeJS module to parse Roblox errors",
   "keywords": [
     "roblox",
@@ -37,17 +37,16 @@
     }
   },
   "scripts": {
-    "test": "node test_runner.js"
+    "test": "node test_runner.cjs"
   },
   "dependencies": {
     "whatwg-mimetype": "5.0.0"
   },
   "devDependencies": {
+    "@types/whatwg-mimetype": "^5.0.0",
     "@types/node": "^20.9.0",
-    "picocolors": "^1.0.0",
     "@deno/shim-deno": "~0.18.0",
-    "whatwg-mimetype": "^5.0.0",
-    "@types/whatwg-mimetype": "^5.0.0"
+    "whatwg-mimetype": "^5.0.0"
   },
-  "_generatedBy": "dnt@dev"
+  "_generatedBy": "dnt@0.43.2"
 }

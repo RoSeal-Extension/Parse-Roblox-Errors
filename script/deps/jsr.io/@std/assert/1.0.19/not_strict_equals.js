@@ -4,7 +4,7 @@ exports.assertNotStrictEquals = assertNotStrictEquals;
 // Copyright 2018-2026 the Deno authors. MIT license.
 // This module is browser compatible.
 const assertion_error_js_1 = require("./assertion_error.js");
-const format_js_1 = require("../../internal/1.0.12/format.js");
+const format_js_1 = require("../../internal/1.0.14/format.js");
 /**
  * Make an assertion that `actual` and `expected` are not strictly equal, using
  * {@linkcode Object.is} for equality comparison. If the values are strictly

@@ -4,7 +4,7 @@ exports.assertArrayIncludes = assertArrayIncludes;
 // Copyright 2018-2026 the Deno authors. MIT license.
 // This module is browser compatible.
 const equal_js_1 = require("./equal.js");
-const format_js_1 = require("../../internal/1.0.12/format.js");
+const format_js_1 = require("../../internal/1.0.14/format.js");
 const assertion_error_js_1 = require("./assertion_error.js");
 function isPrimitive(value) {
     return value === null ||
