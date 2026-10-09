@@ -1,6 +1,6 @@
 ## parse-roblox-errors
 
-A Deno module for parsing BEDEV1/BEDEV2 errors from Roblox API responses, since
+A TypeScript library for parsing BEDEV1/BEDEV2 errors from Roblox API responses, since
 Roblox errors are not standardized. This will also parse
 `x-roblox-system-reason` on the few endpoints that give it.
 
@@ -9,7 +9,7 @@ Roblox errors are not standardized. This will also parse
 #### BEDEV1 (anything except apis.roblox.com)
 
 ```typescript
-import { parseBEDEV1Error } from "jsr:@julli4n/parse_roblox_errors@1.1.11";
+import { parseBEDEV1Error } from "parse-roblox-errors";
 
 console.log(
   await fetch("http://auth.roblox.com/v2/signup").then(parseBEDEV1Error),
@@ -26,7 +26,7 @@ console.log(
 What the module was made for.
 
 ```typescript
-import { parseBEDEV2Error } from "jsr:@julli4n/parse_roblox_errors@1.1.12";
+import { parseBEDEV2Error } from "parse-roblox-errors";
 
 console.log(
   await fetch("https://apis.roblox.com/explore-api/v1/get-sort-content").then(

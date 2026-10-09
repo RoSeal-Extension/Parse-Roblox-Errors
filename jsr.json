@@ -1,0 +1,9 @@
+{
+	"name": "@julli4n/parse-roblox-errors",
+	"version": "1.2.4",
+	"license": "MIT",
+	"exports": {
+		".": "./src/index.ts",
+        "./challenge": "./src/utils/parseChallengeHeaders.ts"
+	}
+}

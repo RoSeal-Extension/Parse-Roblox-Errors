@@ -1,6 +1,6 @@
-import { MIMEType } from "../deps.ts";
-import { isResponseTypeJson } from "./isResponseTypeJson.ts";
+import { MIMEType } from "whatwg-mimetype";
 import type { AnyError } from "../types.ts";
+import { isResponseTypeJson } from "./isResponseTypeJson.ts";
 
 export async function parseAnyError<T>(
   body: () => string | Promise<string>,

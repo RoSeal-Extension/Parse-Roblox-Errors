@@ -1,4 +1,4 @@
-import { parseBEDEV2ErrorFromJSON } from "../../mod.ts";
+import { parseBEDEV2ErrorFromJSON } from "../index.ts";
 import type { AnyError } from "../types.ts";
 import { parseAnyError } from "../utils/parseAnyError.ts";
 

@@ -1,4 +1,4 @@
-import type { MIMEType } from "../deps.ts";
+import type { MIMEType } from "whatwg-mimetype";
 
 export function isResponseTypeJson(responseType: MIMEType) {
   return (responseType.type === "text" ||

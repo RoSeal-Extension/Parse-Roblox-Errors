@@ -1,0 +1,37 @@
+name: Publish on NPM/JSR
+
+permissions:
+  id-token: write
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Repo
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with: 
+          node-version: 26
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Publish on NPM
+        if: github.event_name == 'release' && github.repository == 'RoSeal-Extension/Parse-Roblox-Errors'
+        run: bun run build && npm publish --access public --provenance
+        
+      - name: Publish on JSR
+        if: github.event_name == 'release' && github.repository == 'RoSeal-Extension/Parse-Roblox-Errors'
+        run: bunx jsr publish --allow-slow-types --allow-dirty
+      
